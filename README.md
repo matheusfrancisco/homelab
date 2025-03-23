@@ -1,6 +1,7 @@
 # Homelab kubernetes cluster
 
 ![proxmox](./img.jpeg)
+![pods](./pods.jpeg)
 
 ### Prerequisites
 1. proxmox installed on a server
