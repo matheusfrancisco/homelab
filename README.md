@@ -53,6 +53,36 @@ export PM_USER="user@pve"
 export PM_PASS="secure1234"
 
 ```
+create the terraform.tfvars file change it for you configuration ip
+```
+# Global parameters
+target_node = "pve-node-1"
+bridge_network = "vmbr0"
+bridge_cidr_range = "192.168.1.0/24"
+ciuser = "debian"
+ssh_keys = ""
+
+# Control plane nodes parameters
+master_nr = 3
+master_id_range = 400
+master_network_range = 60 # It will be used as X.X.X.100, X.X.X.101...
+master_naming = "k8s-master"
+master_cores = 2
+master_sockets = 1
+master_memory = 4096
+master_disksize = "20G"
+
+# Worker nodes parameters
+worker_nr = 3
+worker_id_range = 500
+worker_network_range = 70 # It will be used as X.X.X.200, X.X.X.201...
+worker_naming = "k8s-worker"
+worker_cores = 1
+worker_sockets = 1
+worker_memory = 2048
+worker_disksize = "20G"
+
+```
 
 ## 3. run
 
